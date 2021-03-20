@@ -4,11 +4,11 @@ use std::cmp::Ordering;
 
 fn main() {
     println!("Guess the number!");
-    println!("Input your number: ");
 
     let secret_number = rand::thread_rng().gen_range(1..101);
 
     loop {
+        println!("Input your number: ");
         let mut guess = String::new();
         io::stdin().read_line(&mut guess).expect("Failed to read line");
 
