@@ -12,6 +12,10 @@ impl Rectangle {
     fn area(&self) -> u32 {
         self.height * self.width
     }
+
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.width > other.width && self.height > other.height
+    }
 }
 
 fn main() {
@@ -52,6 +56,9 @@ fn main() {
     // println!("Area={}", area(rectangle));
 
     println!("Area={:?}", rectangle.area());
+
+    let rect2 = Rectangle {width: 20, height: 10};
+    println!("Can hold {}", rectangle.can_hold(&rect2));
 }
 
 fn area(rectangle: Rectangle) -> u32 {
