@@ -8,6 +8,12 @@ struct Rectangle {
     height: u32,
 }
 
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.height * self.width
+    }
+}
+
 fn main() {
     // for empty structs
     #[derive(Debug, Default)]
@@ -45,7 +51,7 @@ fn main() {
     let rectangle = Rectangle {width: 30, height: 40};
     // println!("Area={}", area(rectangle));
 
-    println!("Area={:?}", rectangle);
+    println!("Area={:?}", rectangle.area());
 }
 
 fn area(rectangle: Rectangle) -> u32 {
