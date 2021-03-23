@@ -16,5 +16,13 @@ fn main() {
     }
 
     hello_there(&mut v);
-    println!("{:?}", v)
+    println!("{:?}", v);
+
+    for value in v {
+        println!("{}", value);
+    }
+
+    for value in another_v {
+        println!("{}", value);
+    }
 }
