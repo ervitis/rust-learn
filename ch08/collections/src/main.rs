@@ -38,5 +38,9 @@ fn main() {
         .collect();
 
     println!("{:?} and {:?}", scores, another_scores);
-    println!("Blue score is {:?}", scores.get(&String::from("Blue")))
+    println!("Blue score is {:?}", scores.get(&String::from("Blue")));
+
+    for (k, v) in &scores {
+        println!("key {}: has value {}", k, v);
+    }
 }
