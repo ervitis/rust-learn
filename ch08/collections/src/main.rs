@@ -43,4 +43,10 @@ fn main() {
     for (k, v) in &scores {
         println!("key {}: has value {}", k, v);
     }
+
+    scores.insert(String::from("Yellow"), 34);
+    println!("updating value {:?}", scores.get(&String::from("Yellow")));
+
+    scores.entry(String::from("Red")).or_insert(32);
+    println!("new entry {:?}", scores.get(&String::from("Red")));
 }
