@@ -6,6 +6,11 @@ fn main() {
         retweet: false,
     };
     println!("{}", tweet.summarize());
+    notify(&tweet);
+}
+
+fn notify(item: &impl Summary) {
+    println!("Breaking news {}", item.summarize())
 }
 
 pub trait Summary {
