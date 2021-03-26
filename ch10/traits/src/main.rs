@@ -8,7 +8,10 @@ fn main() {
     println!("{}", tweet.summarize());
     notify(&tweet);
 
-    notify_with_title(&tweet)
+    notify_with_title(&tweet);
+
+    let tweet_summary = new_summary();
+    println!("{}", tweet_summary.summarize());
 }
 
 fn notify<T: Summary>(item: &T) {
@@ -64,5 +67,14 @@ impl Title for Tweet {
 impl Summary for Tweet {
     fn summarize(&self) -> String {
         format!("{}: {}", self.username, self.content)
+    }
+}
+
+fn new_summary() -> impl Summary {
+    Tweet {
+        username: String::from("example"),
+        retweet: false,
+        reply: false,
+        content: String::from("my content"),
     }
 }
