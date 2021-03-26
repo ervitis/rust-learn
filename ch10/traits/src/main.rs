@@ -15,7 +15,9 @@ fn notify<T: Summary>(item: &T) {
     println!("Breaking news {}", item.summarize())
 }
 
-fn notify_with_title<T: Summary + Title>(item: &T) {
+/// notify_with_title<T>(item: &T) where T: Summary + Title
+fn notify_with_title<T>(item: &T) where T: Summary + Title {
+//fn notify_with_title<T: Summary + Title>(item: &T) {
     println!("Title headline: {}", item.get_title())
 }
 
